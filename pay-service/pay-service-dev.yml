@@ -1,0 +1,57 @@
+server:
+    port: 8089
+spring:
+    rabbitmq:
+        host: 192.168.47.133
+        password: 123456
+        username: shop
+        port: 5672
+        virtual-host: /v-shop
+        listener:
+            simple:
+                acknowledge-mode: manual  #手动签收消息  默认是自动的        
+    redis:
+        host: 192.168.47.133
+        port: 6380
+        password: 123456
+        database: 0        
+management:
+    endpoints:
+        web:
+            exposure:
+                include: '*'
+feign:
+    hystrix:
+        enabled: true
+ribbon:
+    ReadTimeout: 5000
+    ConnectTimeout: 5000
+hystrix:    #hystrix的全局控制
+    command:
+        default:    #default是全局控制，也可以换成单个方法控制，把default换成方法名即可
+            fallback:
+                isolation:
+                    semaphore:
+                        maxConcurrentRequests: 1000        
+            circuitBreaker:
+                enabled: true   #开启断路器
+                requestVolumeThreshold: 20   #失败次数（阀值）
+                sleepWindowInMilliseconds: 30000    #窗口时间
+                errorThresholdPercentage: 60    #失败率
+            execution:
+                isolation:
+                    strategy: SEMAPHORE  #使用信号量隔离方式
+                    thread:
+                        timeoutInMilliseconds: 5000
+                    semaphore:
+                        maxConcurrentRequests: 1000  #最大并发量
+swagger3:
+    base-package: com.powernode.controller
+    name: powernode
+    url: https://gitee.com/powernode
+    email: xxxxxx@qq.com
+    title: 订单管理系统接口
+    description: 实现订单管理系统的所有接口
+    license: cxs
+    license-url: https://gitee.com/powernode
+    terms-of-service-url: https://gitee.com/powernode
