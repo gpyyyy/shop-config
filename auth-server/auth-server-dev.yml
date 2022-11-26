@@ -7,7 +7,7 @@ spring:
         druid:
             url: jdbc:mysql://192.168.47.133:3306/shop?useSSL=false&serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=UTF-8
             username: root
-            password: 12345678
+            password: 123456
             driver-class-name: com.mysql.cj.jdbc.Driver
             max-active: 30  #最主要参数，配置连接池同时能维持的最大连接数
             min-idle: 3 #maxIdle告诉tomcat最多维持多少个空闲连接，minIdle告诉tomcat即使客户端没有需求，也要至少维持多少个空闲连接,以应对客户端的突发需求
