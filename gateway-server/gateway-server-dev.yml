@@ -1,0 +1,29 @@
+server:
+    #端口号
+    port: 80
+spring:
+    cloud:
+        #网关动态路由
+        gateway:
+            discovery:
+                locator:
+                    enabled: true
+                    lower-case-service-id: true
+    #rabbitmq配置
+    rabbitmq:
+        host: 192.168.47.133
+        username: shop
+        password: 123456
+        port: 5672
+        virtual-host: /v-shop  
+    #redis相关配置                              
+    redis:
+        host: 192.168.47.133
+        port: 6380
+        password: 123456
+        database: 0
+management:
+    endpoints:
+        web:
+            exposure:
+                include: '*' 
