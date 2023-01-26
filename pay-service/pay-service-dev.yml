@@ -2,7 +2,7 @@ server:
     port: 8089
 spring:
     rabbitmq:
-        host: 192.168.47.133
+        host: 192.168.47.134
         password: 123456
         username: shop
         port: 5672
@@ -11,7 +11,7 @@ spring:
             simple:
                 acknowledge-mode: manual  #手动签收消息  默认是自动的        
     redis:
-        host: 192.168.47.133
+        host: 192.168.47.134
         port: 6380
         password: 123456
         database: 0        
@@ -46,12 +46,12 @@ hystrix:    #hystrix的全局控制
                     semaphore:
                         maxConcurrentRequests: 1000  #最大并发量
 swagger3:
-    base-package: com.powernode.controller
-    name: powernode
-    url: https://gitee.com/powernode
+    base-package: com.lntu.controller
+    name: lntu
+    url: https://github.com/lntu
     email: xxxxxx@qq.com
     title: 订单管理系统接口
     description: 实现订单管理系统的所有接口
     license: cxs
-    license-url: https://gitee.com/powernode
-    terms-of-service-url: https://gitee.com/powernode
+    license-url: https://github.com/lntu
+    terms-of-service-url: https://github.com/lntu
