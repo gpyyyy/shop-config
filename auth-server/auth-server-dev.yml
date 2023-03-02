@@ -40,3 +40,7 @@ mybatis-plus:
     #打印SQL
     configuration:
         log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+wx:
+  appid: wx562623a4d8665e55
+  secret: 2d07a963360cd055a34f2dd9bd21c022
+  url: https://api.weixin.qq.com/sns/jscode2session?appid=%s&secret=%s&js_code=%s&grant_type=authorization_code
