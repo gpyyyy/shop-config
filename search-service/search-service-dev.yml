@@ -19,7 +19,13 @@ spring:
                 allow:
                 deny:
                 url-pattern:
-                    - /druid/*                                 
+                    - /druid/*
+        redis:
+            host: 192.168.47.134
+            port: 6380
+            password: 123456
+            database: 0
+        
 management:
     endpoints:
         web:
