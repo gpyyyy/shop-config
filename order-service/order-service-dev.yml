@@ -27,6 +27,9 @@ spring:
         username: shop
         port: 5672
         virtual-host: /v-shop
+        listener:
+            simple:
+                acknowledge-mode: manual
     redis:
         host: 192.168.47.134
         port: 6380
